@@ -7,7 +7,7 @@ const useChangeApi = (url) => {
   const [tvseries, setTvSeries] = useState([])
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  const apiKey = '6b672fd35a3e73005b8a3278250d8048'
+  const apiKey = import.meta.env.VITE_API_KEY;
   useEffect(() => {
     const fetchMovies = async () => {
       try {
