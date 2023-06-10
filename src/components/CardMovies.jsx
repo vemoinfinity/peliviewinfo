@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom';
 import { setMovieIdSlice } from '../store/slice/movieId.slice';
 
-const CardMovies = ({ movies, title }) => {
+const CardMovies = ({ movies }) => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const submit = (data) => {
@@ -12,7 +12,6 @@ const CardMovies = ({ movies, title }) => {
   };
   return (
     <div >
-      <h1>{title}</h1>
       {movies.map((movie) => (
         <div key={movie.id} onClick={() => submit(movie.id)}>
           <h2>{movie.title}</h2>
