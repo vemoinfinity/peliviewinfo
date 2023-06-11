@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
+import { useSelector } from 'react-redux';
 
 const useChangeApi = (url) => {
   const [movies, setMovies] = useState([]);
@@ -9,6 +10,7 @@ const useChangeApi = (url) => {
   const [error, setError] = useState(null);
   const apiKey = import.meta.env.VITE_API_KEY;
   useEffect(() => {
+    const timer = setTimeout(() => {
     const fetchMovies = async () => {
       try {
         const response = await axios.get(url, {
@@ -20,15 +22,18 @@ const useChangeApi = (url) => {
         setMovies(response.data.results);
         setMoviesview(response.data);
         setTvSeries(response.data)
-        setLoading(false);
+       
 
       } catch (error) {
         setError(error);
-        setLoading(false);
+        
       }
     };
+  
 
     fetchMovies();
+    setLoading(false);
+  },900)
   }, [url]);
 
   return { movies, loading, error, moviesview, tvseries };

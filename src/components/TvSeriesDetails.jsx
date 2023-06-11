@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux';
 import useMovieList from '../hooks/useMovieList';
 import CardTvSeriesDetail from './CardTvSeriesDetail';
 import CardTvSeries from './CardTvSeries';
-
+import Loading from '../utils/Loading.jsx'
 const TvSeriesDetails = () => {
   const movieId = useSelector(state => state.movieId)
  /* */
@@ -15,7 +15,7 @@ const TvSeriesDetails = () => {
   );
 
   if (loading) {
-    return <p>Loading...</p>;
+    return <Loading/>;
   }
 
   if (error) {

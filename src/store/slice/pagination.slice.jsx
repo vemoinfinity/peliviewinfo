@@ -15,7 +15,9 @@ const paginationSlice = createSlice({
         state.currentPage -= 1;
       }
     },
+    
   },
+ 
 });
 
 export const { increasePage, decreasePage } = paginationSlice.actions;

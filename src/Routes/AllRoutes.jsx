@@ -4,7 +4,7 @@ import HomePage from '../pages/HomePage';
 import UpComing from '../pages/UpComing';
 import TopRated from '../pages/TopRated';
 import MovieDetails from '../components/MovieDetails';
-import TvPopular from '../pages/TvPopular';
+import TvSeries from '../pages/TvSeries';
 import TvSeriesDetails from '../components/TvSeriesDetails';
 
 const AllRoutes = () => {
@@ -14,7 +14,7 @@ const AllRoutes = () => {
       <Route path='/upcoming' element={<UpComing/>}/>
       <Route path='/toprated' element={<TopRated/>}/>
       <Route path='/movies' element={<MovieDetails/>} />
-      <Route path='/tvseries' element={<TvPopular/>} />
+      <Route path='/tvseries' element={<TvSeries/>} />
       <Route path='/tvseriesdetail' element={<TvSeriesDetails/>} />
     </Routes>
   );
