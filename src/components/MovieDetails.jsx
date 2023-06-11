@@ -4,18 +4,19 @@ import useMovieList from '../hooks/useMovieList';
 import useChangeApi from '../hooks/useChangeApi';
 import CardMovies from './CardMovies';
 import CardMovieDetail from './CardMovieDetail';
+import Loading from '../utils/Loading'
 const MovieDetails = () => {
   const movieId = useSelector(state => state.movieId)
  
-  const { moviesview, isLoading, error } = useChangeApi(
+  const { moviesview, loading, error } = useChangeApi(
     `https://api.themoviedb.org/3/movie/${movieId}`
   );
   const {movies} = useMovieList(
     `https://api.themoviedb.org/3/movie/${movieId}/similar`
   );
   
-  if (isLoading) {
-    return <p>Loading...</p>;
+  if (loading) {
+    return <Loading/>
   }
 
   if (error) {

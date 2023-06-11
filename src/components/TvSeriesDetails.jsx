@@ -3,19 +3,19 @@ import { useSelector } from 'react-redux';
 import useMovieList from '../hooks/useMovieList';
 import CardTvSeriesDetail from './CardTvSeriesDetail';
 import CardTvSeries from './CardTvSeries';
-
+import Loading from '../utils/Loading.jsx'
 const TvSeriesDetails = () => {
   const movieId = useSelector(state => state.movieId)
  /* */
-  const { tvseries, isLoading, error } = useMovieList(
+  const { tvseries, loading, error } = useMovieList(
     `https://api.themoviedb.org/3/tv/${movieId}`
   );
   const {movies} = useMovieList(
     `https://api.themoviedb.org/3/tv/${movieId}/similar`
   );
 
-  if (isLoading) {
-    return <p>Loading...</p>;
+  if (loading) {
+    return <Loading/>;
   }
 
   if (error) {

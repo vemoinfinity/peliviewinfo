@@ -7,10 +7,9 @@ const useMovieList = (url) => {
   const [movies, setMovies] = useState([]);
   const [moviesview, setMoviesview] = useState([])
   const [tvseries, setTvSeries] = useState([])
-  const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const currentPage = useSelector((state) => state.pagination.currentPage);
-  const [isLoading, setIsLoading] = useState(true);
+  const [loading, setLoading] = useState(true);
   useEffect(() => {
     const timer = setTimeout(() => {
       const fetchMovies = async () => {
@@ -34,11 +33,11 @@ const useMovieList = (url) => {
       };
 
       fetchMovies();
-      setIsLoading(false);
+      setLoading(false);
     }, 900)
   }, [url, currentPage]);
 
-  return { movies, loading, error, moviesview, tvseries, isLoading };
+  return { movies, error, moviesview, tvseries, loading };
 };
 
 export default useMovieList;

@@ -10,6 +10,7 @@ const useChangeApi = (url) => {
   const [error, setError] = useState(null);
   const apiKey = import.meta.env.VITE_API_KEY;
   useEffect(() => {
+    const timer = setTimeout(() => {
     const fetchMovies = async () => {
       try {
         const response = await axios.get(url, {
@@ -21,15 +22,18 @@ const useChangeApi = (url) => {
         setMovies(response.data.results);
         setMoviesview(response.data);
         setTvSeries(response.data)
-        setLoading(false);
+       
 
       } catch (error) {
         setError(error);
-        setLoading(false);
+        
       }
     };
+  
 
     fetchMovies();
+    setLoading(false);
+  },900)
   }, [url]);
 
   return { movies, loading, error, moviesview, tvseries };

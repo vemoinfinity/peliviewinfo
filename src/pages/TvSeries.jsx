@@ -4,6 +4,7 @@ import useMovieList from '../hooks/useMovieList';
 import { useDispatch, useSelector } from 'react-redux';
 import { increasePage } from '../store/slice/pagination.slice';
 import { decreasePage } from '../store/slice/pagination.slice';
+import Loading from '../utils/Loading';
 const TvPopular = () => {
   const dispatch = useDispatch();
   const currentPage = useSelector((state) => state.pagination.currentPage);
@@ -24,12 +25,12 @@ const TvPopular = () => {
       setAniPrev(false)},1000)
     }
   };
-  const { movies, isLoading, error } = useMovieList(
+  const { movies, loading, error } = useMovieList(
     'https://api.themoviedb.org/3/tv/popular'
   );
 
-  if (isLoading) {
-    return <p>Loading...</p>;
+  if (loading) {
+    return <Loading/>
   }
 
   if (error) {
