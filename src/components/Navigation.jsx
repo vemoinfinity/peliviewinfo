@@ -51,8 +51,8 @@ const Navigation = () => {
             </button>
             {show &&
               <div className="sm:hidden relative">
-                <div className=" absolute -top-5 bg-gray-700 rounded-md rounded-tl-none">
-                  <Link to='/' class=" grid   text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Home</Link>
+                <div className=" absolute -top-5 bg-gray-700 rounded-md rounded-tl-none">                 
+                  <Link to='/' class=" grid   text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Home</Link>                 
                   <Link to='/tvseries' class="grid  text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">TV Series</Link>
                   <Link to='/toprated' class="grid   text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Top Rated</Link>
                   <Link to='/upcoming' class="grid   text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Up Coming</Link>
@@ -70,7 +70,7 @@ const Navigation = () => {
               </div>
             </div>
           </div>
-          <div className="absolute flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
+          <div className=" flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
             <form className="rounded-full  bg-gray-800 p-1 text-gray-400 " onSubmit={handleSearch}>
               <input className="rounded-full  bg-gray-800 p-1 text-gray-400"
                 type="text"
@@ -79,7 +79,7 @@ const Navigation = () => {
                 placeholder="Buscar película..."
               />
               <button type="submit" className=" relative rounded-full">
-                <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="absolute -bottom-2 h-7 w-7 icon icon-tabler icon-tabler-search" width="36" height="36" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" >
+                <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="absolute -bottom-2 right-1 h-7 w-7 icon icon-tabler icon-tabler-search" width="36" height="36" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" >
                   <path stroke="none" stroke-linecap="round" stroke-linejoin="round" d="M0 0h24v24H0z" fill="none" />
                   <path d="M10 10m-7 0a7 7 0 1 0 14 0a7 7 0 1 0 -14 0" />
                   <path d="M21 21l-6 -6" />

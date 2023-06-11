@@ -1,19 +1,20 @@
 import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
 import useMovieList from '../hooks/useMovieList';
+import useChangeApi from '../hooks/useChangeApi';
 import CardMovies from './CardMovies';
 import CardMovieDetail from './CardMovieDetail';
 const MovieDetails = () => {
   const movieId = useSelector(state => state.movieId)
  
-  const { moviesview, loading, error } = useMovieList(
+  const { moviesview, isLoading, error } = useChangeApi(
     `https://api.themoviedb.org/3/movie/${movieId}`
   );
   const {movies} = useMovieList(
     `https://api.themoviedb.org/3/movie/${movieId}/similar`
   );
   
-  if (loading) {
+  if (isLoading) {
     return <p>Loading...</p>;
   }
 

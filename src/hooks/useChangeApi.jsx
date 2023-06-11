@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
+import { useSelector } from 'react-redux';
 
 const useChangeApi = (url) => {
   const [movies, setMovies] = useState([]);

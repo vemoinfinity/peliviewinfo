@@ -7,14 +7,14 @@ import CardTvSeries from './CardTvSeries';
 const TvSeriesDetails = () => {
   const movieId = useSelector(state => state.movieId)
  /* */
-  const { tvseries, loading, error } = useMovieList(
+  const { tvseries, isLoading, error } = useMovieList(
     `https://api.themoviedb.org/3/tv/${movieId}`
   );
   const {movies} = useMovieList(
     `https://api.themoviedb.org/3/tv/${movieId}/similar`
   );
 
-  if (loading) {
+  if (isLoading) {
     return <p>Loading...</p>;
   }
 
