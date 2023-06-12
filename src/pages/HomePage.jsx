@@ -59,17 +59,17 @@ const HomePage = () => {
         </button>
       </nav>
       <div className=''>
-            {aniNext ?
+        {aniNext ?
           <Loading /> : ''
         }
         {aniPrev ?
-          <Loading />:''}         
+          <Loading /> : ''}
       </div>
-         <div className={`${aniNext ? 'animate-[slideLeft_3s]' : 'animate-[slideRight_3s]'} lg:mx-52 static`}>
-          <div className={`${aniPrev ? 'animate-[slideRightL_3s]' : 'animate-[slideLeftR_3s]'} `} >
-            <CardMovies movies={movies} />;
-          </div>
+      <div className={`${aniNext ? 'animate-[slideLeft_3s]' : 'animate-[slideRight_3s]'} lg:mx-52 static`}>
+        <div className={`${aniPrev ? 'animate-[slideRightL_3s]' : 'animate-[slideLeftR_3s]'} `} >
+          <CardMovies movies={movies} />;
         </div>
+      </div>
     </div>
   );
 };
