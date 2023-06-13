@@ -1,5 +1,5 @@
-import React from 'react';
-import { Route, Routes } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { Route, Routes, useNavigate } from 'react-router-dom';
 import HomePage from '../pages/HomePage';
 import UpComing from '../pages/UpComing';
 import TopRated from '../pages/TopRated';
@@ -8,6 +8,10 @@ import TvSeries from '../pages/TvSeries';
 import TvSeriesDetails from '../components/TvSeriesDetails';
 
 const AllRoutes = () => {
+  const navigate = useNavigate();
+  useEffect(() => {
+    navigate('/');
+  }, []); 
   return (
     <Routes>
       <Route path='/' element={<HomePage/>}/>
