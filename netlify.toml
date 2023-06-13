@@ -10,7 +10,7 @@
   force = true
   [[redirects]]
   from = "/tvseries"
-  to = "/tvseries"
+  to = "/"
   status = 200
   force = true
   [[redirects]]
