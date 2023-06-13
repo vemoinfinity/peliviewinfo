@@ -16,14 +16,21 @@ const CardMovieDetail = ({ movie }) => {
   } = movie;
 
   return (
-    <div>
-      <h1>{title}</h1>
-      <p>{overview}</p>
-      <img src={`https://image.tmdb.org/t/p/w500/${poster_path}`} alt={title} />
+    <div className=''>
+      <div className='flex justify-center items-center'>
+      <a className='text-[30px] '>{title}</a>
+      </div>
+      <div className='lg:flex md:flex m-5 justify-center items-center rounded-lg bg-gray-900 text-cyan-300'>
+        
+      <img className=' lg:m-3 m-auto rounded-lg ' src={`https://image.tmdb.org/t/p/w200/${poster_path}`} alt={title} />
+        
+      <p className='m-5 text-justify rounded-lg lg:w-[30%]  -opacity-10 '>{overview}</p>
+      <div className='m-5'>
+
       <p>Release Date: {release_date}</p>
       {genres&&
       <p>Genres: {genres.map((genre) => genre.name).join(', ')}</p>
-      }
+    }
       <p>Vote Average: {vote_average}</p>
       <p>Vote Count: {vote_count}</p>
       <p>Runtime: {runtime} minutes</p>
@@ -36,12 +43,14 @@ const CardMovieDetail = ({ movie }) => {
       }
       {
         production_countries&&
-      <p>
+        <p>
         Production Countries:{' '}
         {production_countries.map((country) => country.name).join(', ')}
       </p>
       }
       <p>Status: {status}</p>
+      </div>
+      </div>
     </div>
   );
 };
