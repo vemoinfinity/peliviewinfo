@@ -8,3 +8,28 @@
   to = "/"
   status = 200
   force = true
+  [[redirects]]
+  from = "/tvseries"
+  to = "/tvseries"
+  status = 200
+  force = true
+  [[redirects]]
+  from = "/toprated"
+  to = "/"
+  status = 200
+  force = true
+  [[redirects]]
+  from = "/upcoming"
+  to = "/"
+  status = 200
+  force = true
+  [[redirects]]
+  from = "/tvseriesdetail"
+  to = "/tvseries"
+  status = 200
+  force = true
+  [[redirects]]
+  from = "/movies"
+  to = "/"
+  status = 200
+  force = true
