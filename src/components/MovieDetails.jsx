@@ -22,13 +22,13 @@ const MovieDetails = () => {
   if (error) {
     return <p>Error fetching movies: {error.message}</p>;
   }
-
   return (
     <div>
-      <h1>Movie Details</h1> 
+      <div className='flex'>
       {moviesview && (
         <CardMovieDetail movie={moviesview}/>
-      )}
+        )}
+        </div>
 <CardMovies movies={movies} title="Películas Similares" />;
     </div>
   );
