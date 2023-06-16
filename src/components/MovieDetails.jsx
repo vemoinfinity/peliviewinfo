@@ -22,7 +22,7 @@ const MovieDetails = () => {
   if (error) {
     return <p>Error fetching movies: {error.message}</p>;
   }
-
+console.log(moviesview)
   return (
     <div>
       <div className='flex'>
