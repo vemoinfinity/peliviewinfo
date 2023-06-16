@@ -9,6 +9,9 @@ const CardMovies = ({ movies }) => {
   const submit = (data) => {
     dispatch(setMovieIdSlice(data));
     navigate("/movies");
+    setTimeout(()=>{
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    },1000)
   };
 
   return (
