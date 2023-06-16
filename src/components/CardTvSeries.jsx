@@ -10,6 +10,9 @@ const CardTvSeries = ({ tvseries }) => {
   const submit = (id) => {
     dispatch(setMovieIdSlice(id));
     navigate('/tvseriesdetail');
+    setTimeout(()=>{
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    },1000)
   };
 
   return (
