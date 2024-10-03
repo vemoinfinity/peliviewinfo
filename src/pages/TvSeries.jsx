@@ -42,7 +42,7 @@ const TvPopular = () => {
   return (
     <div>
       <div className=' text-5xl flex  my-6 justify-center  rounded-lg'>Series de tv populares</div>
-      <nav className=' bg-gray-500 flex my-4 mx-10 lg:mx-52 justify-between items-center rounded-lg' >
+      <nav className=' bg-transparent flex my-4 mx-10 lg:mx-52 justify-between items-center rounded-lg' >
         <button onClick={handleDecreasePage} disabled={isPrevButtonDisabled}>
           <svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-arrow-badge-left" width="36" height="36" viewBox="0 0 24 24" strokeWidth="1.5" stroke="#ff2825" fill="none" strokeLinecap="round" strokeLinejoin="round">
             <path stroke="none" d="M0 0h24v24H0z" fill="none" />
