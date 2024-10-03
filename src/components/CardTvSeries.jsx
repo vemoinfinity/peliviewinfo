@@ -1,4 +1,4 @@
-import React from 'react';
+/* eslint-disable react/prop-types */
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { setMovieIdSlice } from '../store/slice/movieId.slice';
@@ -35,9 +35,9 @@ const CardTvSeries = ({ tvseries }) => {
             <p className='flex transition items-center mr-3
             text-xl group-hover:text-gray-200'>
               <svg xmlns="http://www.w3.org/2000/svg"
-                class=" icon icon-tabler icon-tabler-star" width="32" height="32"
-                viewBox="0 0 24 24" stroke-width="1.5" stroke="black" fill="#ffec00"
-                stroke-linecap="round" stroke-linejoin="round">
+                className=" icon icon-tabler icon-tabler-star" width="32" height="32"
+                viewBox="0 0 24 24" strokeWidth="1.5" stroke="black" fill="#ffec00"
+                strokeLinecap="round" strokeLinejoin="round">
                 <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                 <path d="M12 17.75l-6.172 3.245l1.179 
                 -6.873l-5 -4.867l6.9 -1l3.086 -6.253l3.086 

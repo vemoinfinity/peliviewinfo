@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import CardMovies from '../components/CardMovies';
 import useMovieList from '../hooks/useMovieList';
 import { increasePage } from '../store/slice/pagination.slice';
@@ -45,14 +45,14 @@ const HomePage = () => {
       <div className='  text-5xl flex  my-6 justify-center select-none rounded-lg'>Películas Populares</div>
       <nav className=' bg-transparent  flex my-4 mx-10 lg:mx-52 justify-between items-center rounded-lg' >
         <button className='hover:bg-gray-300 rounded-lg' onClick={handleDecreasePage} disabled={isPrevButtonDisabled}>
-          <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-arrow-badge-left" width="40" height="50" viewBox="0 0 24 24" stroke-width="1.5" stroke="black" fill="#ff2825" stroke-linecap="round" stroke-linejoin="round">
+          <svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-arrow-badge-left" width="40" height="50" viewBox="0 0 24 24" strokeWidth="1.5" stroke="black" fill="#ff2825" strokeLinecap="round" strokeLinejoin="round">
             <path stroke="none" d="M0 0h24v24H0z" fill="none" />
             <path d="M11 17h6l-4 -5l4 -5h-6l-4 5z" />
           </svg>
         </button>
         <span className='text-gray-300 select-none' >Page #{currentPage}</span>
         <button className=' hover:bg-gray-300 rounded-lg' onClick={handleIncreasePage}>
-          <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-arrow-badge-right" width="40" height="50" viewBox="0 0 24 24" stroke-width="1.5" stroke="black" fill="#ff2825" stroke-linecap="round" stroke-linejoin="round">
+          <svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-arrow-badge-right" width="40" height="50" viewBox="0 0 24 24" strokeWidth="1.5" stroke="black" fill="#ff2825" strokeLinecap="round" strokeLinejoin="round">
             <path stroke="none" d="M0 0h24v24H0z" fill="none" />
             <path d="M13 7h-6l4 5l-4 5h6l4 -5z" />
           </svg>

@@ -1,5 +1,3 @@
-import axios from 'axios';
-import React, { useEffect, useState } from 'react';
 import CardMovies from '../components/CardMovies';
 import useChangeApi from '../hooks/useChangeApi';
 import Loading from '../utils/Loading';

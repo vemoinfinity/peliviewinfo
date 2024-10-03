@@ -1,4 +1,3 @@
-import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
 import useMovieList from '../hooks/useMovieList';
 import useChangeApi from '../hooks/useChangeApi';
