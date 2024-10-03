@@ -1,8 +1,7 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useSelector } from 'react-redux';
-const apiKey = import.meta.env.VITE_API_KEY;
-
+import { apiKey } from '../utils/config';
 const useMovieList = (url) => {
   const [movies, setMovies] = useState([]);
   const [moviesview, setMoviesview] = useState([])

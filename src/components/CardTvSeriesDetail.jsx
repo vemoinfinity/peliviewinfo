@@ -1,6 +1,8 @@
 /* eslint-disable react/prop-types */
 
-const CardTvSeriesDetail = ({ tvseries }) => {
+import { Star, Calendar, Film, Tv } from "lucide-react"
+
+export default function CardTvSeriesDetail({ tvseries }) {
   const {
     name,
     overview,
@@ -16,32 +18,68 @@ const CardTvSeriesDetail = ({ tvseries }) => {
   } = tvseries;
 
   return (
-    <div>
-      <div className='flex justify-center items-center'>
-        <a className='text-[30px] '>{name}</a>
+    <div className="container mx-auto px-4 py-8">
+      <div className="relative rounded-lg overflow-hidden shadow-xl">
+        <img
+          src={`https://image.tmdb.org/t/p/original/${backdrop_path}`}
+          alt={name}
+          className="w-full h-[400px] object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent" />
+        <div className="absolute bottom-0 left-0 right-0 p-8">
+          <h1 className="text-4xl font-bold text-white mb-2">{name}</h1>
+          <div className="flex items-center text-yellow-400 mb-4">
+            <Star className="w-5 h-5 fill-current" />
+            <span className="ml-2 text-lg">{vote_average}</span>
+            <span className="ml-2 text-sm text-gray-300">({vote_count} votes)</span>
+          </div>
+        </div>
       </div>
-      <div className=' relative lg:flex md:flex my-5 justify-center items-center rounded-lg bg-gray-900 text-cyan-300 '>
-        <img className=' w-screen lg:h-[400px] rounded-lg opacity-20' src={`https://image.tmdb.org/t/p/w500/${backdrop_path}`} alt={name} />
-        <div className=' lg:absolute lg:flex md:flex my-5 justify-center items-center rounded-lg'>
-        <img className='absolute top-2 lg:static lg:m-3 m-auto rounded-lg ' src={`https://image.tmdb.org/t/p/w200/${poster_path}`} alt={name} />
-          {overview &&
-            <p className=' m-5 text-justify rounded-lg lg:w-[30%] -opacity-10 '>{overview}</p>
-          }
-        <div className='m-5'>
-          <p>First Air Date: {first_air_date}</p>
-          {genres &&
-            <p>Genres: {genres.map((genre) => genre.name).join(', ')}</p>
-          }
-          <p>Vote Average: {vote_average}</p>
-          <p>Vote Count: {vote_count}</p>
-          <p>Number of Seasons: {number_of_seasons}</p>
-          <p>Number of Episodes: {number_of_episodes}</p>
-          <p>Status: {status}</p>
+      <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="md:col-span-1">
+          <img
+            src={`https://image.tmdb.org/t/p/w500/${poster_path}`}
+            alt={name}
+            className="w-full rounded-lg shadow-lg"
+          />
+        </div>
+        <div className="md:col-span-2">
+          <h2 className="text-2xl font-semibold mb-4">Overview</h2>
+          <p className="text-gray-300 mb-6">{overview}</p>
+          <div className="grid grid-cols-2 gap-4">
+            <div>
+              <h3 className="text-lg font-semibold mb-2">Details</h3>
+              <ul className="space-y-2 text-sm">
+                <li className="flex items-center">
+                  <Calendar className="w-4 h-4 mr-2" />
+                  <span className="font-medium">First Air Date:</span> {first_air_date}
+                </li>
+                <li className="flex items-center">
+                  <Film className="w-4 h-4 mr-2" />
+                  <span className="font-medium">Seasons:</span> {number_of_seasons}
+                </li>
+                <li className="flex items-center">
+                  <Tv className="w-4 h-4 mr-2" />
+                  <span className="font-medium">Episodes:</span> {number_of_episodes}
+                </li>
+                <li className="flex items-center">
+                  <span className="font-medium">Status:</span> {status}
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h3 className="text-lg font-semibold mb-2">Genres</h3>
+              <div className="flex flex-wrap gap-2">
+                {genres && genres.map((genre) => (
+                  <span key={genre.id} className="px-2 py-1 bg-gray-600 rounded-full text-sm">
+                    {genre.name}
+                  </span>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  );
-};
-
-export default CardTvSeriesDetail;
+  )
+}

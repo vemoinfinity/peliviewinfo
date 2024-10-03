@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
-
+import { apiKey } from '../utils/config';
 
 const useChangeApi = (url) => {
   const [movies, setMovies] = useState([]);
@@ -8,7 +8,7 @@ const useChangeApi = (url) => {
   const [tvseries, setTvSeries] = useState([])
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  const apiKey = import.meta.env.VITE_API_KEY;
+  
   useEffect(() => {
     const timer = setTimeout(() => {
     const fetchMovies = async () => {
